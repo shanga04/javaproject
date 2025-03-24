@@ -3,18 +3,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestDriveManager {
-    private static final String FILE_PATH = "src/bookings.txt"; // File to store bookings
+    private static final String FILE_PATH = "src/bookings.txt"; 
     
-    // Method to book a test drive
     public static boolean bookTestDrive(String customerName, String carModel, String date) {
         try {
-            // Check if booking already exists
             if (isDuplicateBooking(customerName, carModel, date)) {
                 System.out.println("Error: Test drive already booked for this car on this date.");
                 return false;
             }
             
-            // Write new booking to file
             BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true));
             writer.write(customerName + "," + carModel + "," + date);
             writer.newLine();
@@ -25,8 +22,7 @@ public class TestDriveManager {
         }
         return false;
     }
-    
-    // Method to check if a booking already exists
+
     private static boolean isDuplicateBooking(String customerName, String carModel, String date) {
         List<String> bookings = getBookings();
         for (String booking : bookings) {
@@ -37,7 +33,6 @@ public class TestDriveManager {
         return false;
     }
     
-    // Method to retrieve all bookings
     public static List<String> getBookings() {
         List<String> bookings = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
