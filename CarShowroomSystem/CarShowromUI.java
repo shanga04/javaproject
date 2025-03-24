@@ -1,4 +1,3 @@
-Khadija, [3/24/2025 1:14 AM]
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
