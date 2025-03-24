@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class TestDriveUI {
-    private JTextArea bookingListArea; // To display bookings
+    private JTextArea bookingListArea;
     
     public TestDriveUI() {
         JFrame frame = new JFrame("Test Drive Booking");
@@ -13,7 +13,7 @@ public class TestDriveUI {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         
-        // Input fields
+    
         JPanel inputPanel = new JPanel(new GridLayout(4, 2));
         JLabel nameLabel = new JLabel("Your Name:");
         JTextField nameField = new JTextField();
@@ -22,17 +22,16 @@ public class TestDriveUI {
         JLabel dateLabel = new JLabel("Date (YYYY-MM-DD):");
         JTextField dateField = new JTextField();
         JButton bookButton = new JButton("Book Test Drive");
-        
+         
         inputPanel.add(nameLabel);
         inputPanel.add(nameField);
         inputPanel.add(carLabel);
         inputPanel.add(carField);
         inputPanel.add(dateLabel);
         inputPanel.add(dateField);
-        inputPanel.add(new JLabel("")); // Empty space
+        inputPanel.add(new JLabel(""));
         inputPanel.add(bookButton);
-        
-        // Booking List Area
+       
         bookingListArea = new JTextArea();
         bookingListArea.setEditable(false);
         updateBookingList();
@@ -40,7 +39,7 @@ public class TestDriveUI {
         frame.add(inputPanel, BorderLayout.NORTH);
         frame.add(new JScrollPane(bookingListArea), BorderLayout.CENTER);
         
-        // Book Button Action
+      
         bookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,7 +65,7 @@ public class TestDriveUI {
         frame.setVisible(true);
     }
     
-    // Method to update booking list display
+    
     private void updateBookingList() {
         bookingListArea.setText("Test Drive Bookings:\n");
         List<String> bookings = TestDriveManager.getBookings();
