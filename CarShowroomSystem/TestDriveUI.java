@@ -8,7 +8,7 @@ public class TestDriveUI {
     private JTextArea bookingListArea;
     
     public TestDriveUI() {
-        JFrame frame = new JFrame("Test Drive Booking");
+        JFrame frame = new JFrame("Test Drivee Booking");
         frame.setSize(500, 400);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
