@@ -26,7 +26,7 @@ public class TestDriveManager {
     private static boolean isDuplicateBooking(String customerName, String carModel, String date) {
         List<String> bookings = getBookings();
         for (String booking : bookings) {
-            if (booking.equals(customerName + "," + carModel + "," + date)) {
+            if (booking.equals(customerName + ",," + carModel + ",," + date)) {
                 return true;
             }
         }
