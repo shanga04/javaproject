@@ -17,25 +17,20 @@ JPanel bookingPanel = new JPanel(new GridLayout(0, 1));
 JScrollPane scrollPane = new JScrollPane(bookingPanel); 
 for (Booking booking : bookings) { 
 JPanel p = new JPanel(new FlowLayout()); 
-JLabel label = new JLabel("Booking #" + booking.getId() + " | Car "
-ID: " + booking.getCarId() + 
-" | User ID: " + booking.getUserId() + " | Status: " + 
-booking.getStatus()); 
+JLabel label = new JLabel("Booking #" + booking.getId() + " | Car "ID: " + booking.getCarId() + " |" User ID: " + booking.getUserId() + " | Status: " + booking.getStatus()); 
 JButton approveBtn = new JButton("Approve"); 
 JButton rejectBtn = new JButton("Reject"); 
 approveBtn.addActionListener(e -> { 
 boolean updated = 
 BookingController.updateBookingStatus(booking.getId(), "approved"); 
-JOptionPane.showMessageDialog(this, updated ? "Booking 
-approved." : "Approval failed."); 
+JOptionPane.showMessageDialog(this, updated ? "Booking approved." : "Approval failed."); 
 dispose(); 
 new AdminBookingManager().setVisible(true); 
 }); 
 rejectBtn.addActionListener(e -> { 
 boolean updated = 
 BookingController.updateBookingStatus(booking.getId(), "rejected"); 
-JOptionPane.showMessageDialog(this, updated ? "Booking 
-rejected." : "Rejection failed."); 
+JOptionPane.showMessageDialog(this, updated ? "Booking rejected." : "Rejection failed."); 
 dispose(); 
 new AdminBookingManager().setVisible(true); 
 }); 

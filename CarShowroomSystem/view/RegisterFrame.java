@@ -1,8 +1,8 @@
 package view; 
-import dao.UserDAO; 
-import model.User; 
-import util.UIHelper; 
+import dao.UserDAO;
 import javax.swing.*; 
+import model.User;
+import util.UIHelper; 
 public class RegisterFrame extends JFrame { 
 private JTextField usernameField; 
 private JPasswordField passwordField; 
@@ -40,8 +40,7 @@ String username = usernameField.getText().trim();
 String password = new String(passwordField.getPassword()).trim(); 
 String role = (String) roleCombo.getSelectedItem(); 
 if (username.isEmpty() || password.isEmpty()) { 
-JOptionPane.showMessageDialog(this, "Please fill in all 
-fields."); 
+JOptionPane.showMessageDialog(this, "Please fill in all fields."); 
 return; 
 } 
 User newUser = new User(0, username, password, role); 

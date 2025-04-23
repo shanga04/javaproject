@@ -1,8 +1,8 @@
 package view; 
-import controller.CarController; 
-import model.Car; 
-import util.UIHelper; 
+import controller.CarController;
 import javax.swing.*; 
+import model.Car;
+import util.UIHelper; 
 public class AddCarForm extends JFrame { 
 private JTextField makeField, modelField, priceField, fuelField, 
 imagePathField; 
@@ -62,12 +62,10 @@ add(makeField);
                 ); 
                 boolean success = CarController.addNewCar(car); 
                 if (success) { 
-                    JOptionPane.showMessageDialog(this, "Car added 
-successfully."); 
+                    JOptionPane.showMessageDialog(this, "Car added successfully."); 
                     dispose(); 
                 } else { 
-                    JOptionPane.showMessageDialog(this, "Failed to add 
-car."); 
+                    JOptionPane.showMessageDialog(this, "Failed to add car."); 
                 } 
             } catch (Exception ex) { 
                 JOptionPane.showMessageDialog(this, "Invalid input."); 
