@@ -1,10 +1,10 @@
 package view; 
-import controller.BookingController; 
-import controller.CarController; 
-import model.Car; 
-import util.UIHelper; 
-import javax.swing.*; 
+import controller.BookingController;
+import controller.CarController;
 import java.util.ArrayList; 
+import javax.swing.*;
+import model.Car;
+import util.UIHelper; 
 public class CarSearchAndBookForm extends JFrame { 
     private JTextField makeField, fuelField; 
     private final int userId; 
@@ -39,8 +39,7 @@ public class CarSearchAndBookForm extends JFrame {
             ArrayList<Car> matches = 
 CarController.searchCars(makeField.getText(), fuelField.getText()); 
             if (matches.isEmpty()) { 
-                JOptionPane.showMessageDialog(this, "No matching cars 
-found."); 
+                JOptionPane.showMessageDialog(this, "No matching cars found."); 
             } else { 
                 for (Car car : matches) { 
                     int choice = JOptionPane.showConfirmDialog(this, 
@@ -51,9 +50,7 @@ car.getModel() +
                     if (choice == JOptionPane.YES_OPTION) { 
                         boolean booked = 
 BookingController.bookCar(car.getId(), userId); 
-                        JOptionPane.showMessageDialog(this, 
-                                booked ? "Booked successfully!" : "Booking 
-failed."); 
+                        JOptionPane.showMessageDialog(this,  booked ? "Booked successfully!" : "Booking failed."); 
                     } 
                 } 
             } 
