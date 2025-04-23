@@ -1,14 +1,13 @@
 package dao; 
  
+import java.sql.*;
+import java.util.ArrayList;
 import model.Car; 
-import java.sql.*; 
-import java.util.ArrayList; 
  
 public class CarDAO { 
     public static boolean addCar(Car car) { 
         try (Connection con = DBConnection.getConnection()) { 
-            String sql = "INSERT INTO cars (make, model, price, fuel_type, 
-image_path) VALUES (?, ?, ?, ?, ?)"; 
+            String sql = "INSERT INTO cars (make, model, price, fuel_type, image_path) VALUES (?, ?, ?, ?, ?)"; 
             PreparedStatement ps = con.prepareStatement(sql); 
             ps.setString(1, car.getMake()); 
             ps.setString(2, car.getModel()); 
@@ -25,8 +24,7 @@ image_path) VALUES (?, ?, ?, ?, ?)";
     public static ArrayList<Car> getAllCars() { 
         ArrayList<Car> list = new ArrayList<>(); 
         try (Connection con = DBConnection.getConnection()) { 
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM 
-cars"); 
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM cars"); 
             while (rs.next()) { 
                 list.add(new Car( 
                         rs.getInt("id"), 
@@ -46,8 +44,7 @@ cars");
     public static ArrayList<Car> searchCars(String make, String fuelType) { 
         ArrayList<Car> list = new ArrayList<>(); 
         try (Connection con = DBConnection.getConnection()) { 
-            String sql = "SELECT * FROM cars WHERE make LIKE ? AND fuel_type 
-LIKE ?"; 
+            String sql = "SELECT * FROM cars WHERE make LIKE ? AND fuel_type LIKE ?"; 
             PreparedStatement ps = con.prepareStatement(sql); 
             ps.setString(1, "%" + make + "%"); 
             ps.setString(2, "%" + fuelType + "%"); 
