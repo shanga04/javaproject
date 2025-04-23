@@ -1,11 +1,10 @@
 package dao; 
+import java.sql.*;
 import model.User; 
-import java.sql.*; 
 public class UserDAO { 
 public static User login(String username, String password) { 
         try (Connection con = DBConnection.getConnection()) { 
-            String sql = "SELECT * FROM users WHERE username = ? AND password 
-= ?"; 
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?"; 
             PreparedStatement ps = con.prepareStatement(sql); 
             ps.setString(1, username); 
             ps.setString(2, password); 
@@ -27,8 +26,7 @@ public static User login(String username, String password) {
  
     public static boolean register(User user) { 
         try (Connection con = DBConnection.getConnection()) { 
-            String sql = "INSERT INTO users (username, password, role) VALUES 
-(?, ?, ?)"; 
+            String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)"; 
             PreparedStatement ps = con.prepareStatement(sql); 
             ps.setString(1, user.getUsername()); 
             ps.setString(2, user.getPassword()); 
