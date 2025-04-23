@@ -1,10 +1,10 @@
 package view; 
-import controller.BookingController; 
-import model.Booking; 
-import util.UIHelper; 
-import javax.swing.*; 
+import controller.BookingController;
 import java.awt.*; 
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import javax.swing.*;
+import model.Booking;
+import util.UIHelper; 
 public class AdminBookingManager extends JFrame { 
 public AdminBookingManager() { 
 setTitle("Manage Bookings"); 
@@ -17,7 +17,13 @@ JPanel bookingPanel = new JPanel(new GridLayout(0, 1));
 JScrollPane scrollPane = new JScrollPane(bookingPanel); 
 for (Booking booking : bookings) { 
 JPanel p = new JPanel(new FlowLayout()); 
-JLabel label = new JLabel("Booking #" + booking.getId() + " | Car "ID: " + booking.getCarId() + " |" User ID: " + booking.getUserId() + " | Status: " + booking.getStatus()); 
+JLabel label = new JLabel(
+    "Booking #" + booking.getId()
+    + " | Car ID: " + booking.getCarId()
+    + " | User ID: " + booking.getUserId()
+    + " | Status: " + booking.getStatus()
+);
+
 JButton approveBtn = new JButton("Approve"); 
 JButton rejectBtn = new JButton("Reject"); 
 approveBtn.addActionListener(e -> { 
