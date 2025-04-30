@@ -12,7 +12,7 @@ public class BookingUI extends JFrame {
  }
  JTextField dateField = new JTextField("2025-05-01");
  JButton bookBtn = new JButton("Book Now");
- JPanel panel = new JPanel(new GridLayout(3, 2, 10, 10));
+ JPanel panel = new JPanel(new GridLayout(3, 2, 11, 10));
  panel.setBackground(new Color(255, 255, 240));
  panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
  panel.add(new JLabel("Select Car:"));
