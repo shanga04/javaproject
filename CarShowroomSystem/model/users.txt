@@ -1,2 +1,0 @@
-admin,admin123,Admin
-john,john123,Customer

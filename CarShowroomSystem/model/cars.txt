@@ -1,3 +1,0 @@
-Toyota Corolla,20000,Petrol,Available
-Honda Civic,25000,Petrol,Available
-Tesla Model 3,40000,Electric,Unavailable
