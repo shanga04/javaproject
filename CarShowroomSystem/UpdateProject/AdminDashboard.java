@@ -78,6 +78,7 @@ public class AdminDashboard extends JFrame {
     private void showCustomers() {
         JOptionPane.showMessageDialog(this, "Showing all customers...\n" + customerManager.getAllCustomers(), "Customer List", JOptionPane.INFORMATION_MESSAGE);
     }
+    
 
     // Method to display salesperson details
     private void showSalespeople() {
